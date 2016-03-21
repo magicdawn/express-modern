@@ -1,0 +1,26 @@
+{
+  "name": "express-modern",
+  "version": "0.0.1",
+  "description": "use async function or generator function with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/magicdawn/express-modern.git"
+  },
+  "keywords": [
+    "express",
+    "promise",
+    "async-function",
+    "async",
+    "generator"
+  ],
+  "author": "magicdawn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magicdawn/express-modern/issues"
+  },
+  "homepage": "https://github.com/magicdawn/express-modern#readme"
+}
