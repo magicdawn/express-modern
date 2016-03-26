@@ -14,6 +14,11 @@ const isGeneratorFunction = f =>
   typeof f === 'function' &&
   f.constructor.name === 'GeneratorFunction';
 
+const hasCatch = p =>
+  typeof p === 'object' &&
+  p.catch &&
+  typeof p.catch === 'function';
+
 /**
  * modern
  *
@@ -35,9 +40,7 @@ const modern = module.exports = function express_modern(fn) {
       const ret = fn.call(this, err, req, res, next);
 
       // catch
-      if (typeof ret === 'object' && ret.catch && typeof ret.catch === 'function') {
-        ret.catch(next);
-      }
+      if (hasCatch(ret)) ret.catch(next);
     };
   }
   else {
@@ -46,9 +49,7 @@ const modern = module.exports = function express_modern(fn) {
       const ret = fn.call(this, req, res, next);
 
       // catch
-      if (typeof ret === 'object' && ret.catch && typeof ret.catch === 'function') {
-        ret.catch(next);
-      }
+      if (hasCatch(ret)) ret.catch(next);
     };
   }
 };
