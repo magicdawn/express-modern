@@ -4,7 +4,8 @@
   "description": "use async function or generator function with express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-cover": "istanbul cover _mocha -- -u exports"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,30 @@
   "bugs": {
     "url": "https://github.com/magicdawn/express-modern/issues"
   },
-  "homepage": "https://github.com/magicdawn/express-modern#readme"
+  "homepage": "https://github.com/magicdawn/express-modern#readme",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "co": "^4.6.0"
+  },
+  "devDependencies": {
+    "co-mocha": "^1.1.2",
+    "coveralls": "^2.11.9",
+    "express": "^4.13.4",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "promise.ify": "^0.2.0",
+    "should": "^8.3.0",
+    "supertest": "^1.2.0",
+    "babel-register": "^6.7.2",
+    "babel-plugin-syntax-async-functions": "^6.5.0",
+    "babel-plugin-transform-async-to-generator": "^6.7.4"
+  }
 }
