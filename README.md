@@ -1,11 +1,11 @@
 # express-modern
 use async function or generator function with express
 
-[![Build Status](https://travis-ci.org/magicdawn/express-modern.svg)](https://travis-ci.org/magicdawn/express-modern)
-[![Coverage Status](https://coveralls.io/repos/github/magicdawn/express-modern/badge.svg?branch=master)](https://coveralls.io/github/magicdawn/express-modern?branch=master)
-[![npm version](https://img.shields.io/npm/v/express-modern.svg)](https://www.npmjs.com/package/express-modern)
-[![npm downloads](https://img.shields.io/npm/dm/express-modern.svg)](https://www.npmjs.com/package/express-modern)
-[![npm license](https://img.shields.io/npm/l/express-modern.svg)](http://magicdawn.mit-license.org)
+[![Build Status](https://img.shields.io/travis/magicdawn/express-modern.svg?style=flat-square)](https://travis-ci.org/magicdawn/express-modern)
+[![Coverage Status](https://img.shields.io/coveralls/magicdawn/express-modern.svg?style=flat-square)](https://coveralls.io/github/magicdawn/express-modern?branch=master)
+[![npm version](https://img.shields.io/npm/v/express-modern.svg?style=flat-square)](https://www.npmjs.com/package/express-modern)
+[![npm downloads](https://img.shields.io/npm/dm/express-modern.svg?style=flat-square)](https://www.npmjs.com/package/express-modern)
+[![npm license](https://img.shields.io/npm/l/express-modern.svg?style=flat-square)](http://magicdawn.mit-license.org)
 
 ## Install
 
