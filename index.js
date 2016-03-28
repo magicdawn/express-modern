@@ -36,20 +36,21 @@ const modern = module.exports = function express_modern(fn) {
 
   if (len === 4) {
     return function(err, req, res, next) {
-      // call
-      const ret = fn.call(this, err, req, res, next);
-
-      // catch
-      if (hasCatch(ret)) ret.catch(next);
+      run.apply(this, [].slice.call(arguments));
+    };
+  } else {
+    return function(req, res, next) {
+      run.apply(this, [].slice.call(arguments));
     };
   }
-  else {
-    return function(req, res, next) {
-      // call
-      const ret = fn.call(this, req, res, next);
 
-      // catch
-      if (hasCatch(ret)) ret.catch(next);
-    };
+  function run() {
+    const next = arguments[len - 1];
+    try {
+      const ret = fn.apply(this, [].slice.call(arguments)); // call
+      if (hasCatch(ret)) ret.catch(next); // catch
+    } catch (e) {
+      next(e);
+    }
   }
 };

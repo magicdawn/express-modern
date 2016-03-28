@@ -53,4 +53,21 @@ describe('Normal function', function() {
 
     res.text.should.match(/normal/);
   });
+
+  it('normal function error', function * () {
+    const app = express();
+    app.get('/', modern((req, res, next) => {
+      throw new Error('normal error');
+    }));
+
+    app.use(modern((err, req, res, next) => {
+      res.send(err.message);
+    }));
+
+    const res = yield request(app)
+      .get('/')
+      .endAsync();
+
+    res.text.should.match(/normal error/);
+  });
 });
