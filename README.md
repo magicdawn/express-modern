@@ -13,6 +13,12 @@ use async function or generator function with express
 npm i express-modern --save
 ```
 
+## supported case
+
+- normal handler `app.get('/', modern((req, res, next) => { ... }))`
+- error handler `app.get('/', modern((err, req, res, next) => { ... }))`
+- param handler `app.param('user', modern((req, res, next, user) => { ... }))`
+
 ## API
 
 ```js
