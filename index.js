@@ -38,18 +38,28 @@ const modern = module.exports = function express_modern(fn) {
 
   if (len === 4) {
     return function(err, req, res, next) {
-      run.apply(this, slice.call(arguments));
+      // normal case
+      if (typeof next === 'function') {
+        return run.call(this, next, slice.call(arguments));
+      };
+
+      // router.params('user', (req, res, next, user)=>{ ... })
+      if (typeof res === 'function') {
+        let _next = res;
+        return run.call(this, _next, slice.call(arguments));
+      }
+
+      throw new TypeError('unsupported arguments type');
     };
   } else {
     return function(req, res, next) {
-      run.apply(this, slice.call(arguments));
+      run.call(this, next, slice.call(arguments));
     };
   }
 
-  function run() {
-    const next = arguments[len - 1];
+  function run(next, args) {
     try {
-      const ret = fn.apply(this, slice.call(arguments)); // call
+      const ret = fn.apply(this, args); // call
       if (hasCatch(ret)) ret.catch(next); // catch
     } catch (e) {
       next(e);

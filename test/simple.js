@@ -38,6 +38,22 @@ describe('Generator', function() {
     res.status.should.equal(500);
     res.text.should.equal('boom');
   });
+
+  it('auto next when no next', function * () {
+    const app = express();
+    app.get('/', modern(function * () {
+      throw new Error('boom');
+    }));
+
+    app.use(modern(function * (err, req, res, next) {
+      res.send(err.message);
+    }));
+
+    const res = yield request(app)
+      .get('/')
+      .endAsync();
+    res.text.should.equal('boom');
+  });
 });
 
 describe('Normal function', function() {
