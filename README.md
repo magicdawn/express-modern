@@ -1,4 +1,6 @@
 # express-modern
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/magicdawn/express-modern.svg)](https://greenkeeper.io/)
 use async function or generator function with express
 
 [![Build Status](https://img.shields.io/travis/magicdawn/express-modern.svg?style=flat-square)](https://travis-ci.org/magicdawn/express-modern)
