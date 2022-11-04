@@ -27,6 +27,7 @@
   "homepage": "https://github.com/magicdawn/express-modern#readme",
   "files": [
     "index.js",
+		"index.d.ts",
     "LICENSE",
     "package.json",
     "README.md"
