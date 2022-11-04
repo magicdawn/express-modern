@@ -37,16 +37,11 @@
     "co": "^4.6.0"
   },
   "devDependencies": {
-    "co-mocha": "^1.1.2",
-    "coveralls": "^2.11.9",
-    "express": "^4.13.4",
-    "istanbul": "^1.0.0-alpha.2",
-    "mocha": "^3.2.0",
-    "promise.ify": "^0.3.0",
-    "should": "^11.2.1",
-    "supertest": "^3.0.0",
-    "babel-register": "^6.7.2",
-    "babel-plugin-syntax-async-functions": "^6.5.0",
-    "babel-plugin-transform-async-to-generator": "^6.7.4"
+    "express": "^4.18.2",
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0",
+    "promise.ify": "^0.4.0",
+    "should": "^13.2.3",
+    "supertest": "^6.3.1"
   }
 }
