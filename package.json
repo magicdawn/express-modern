@@ -1,6 +1,6 @@
 {
   "name": "express-modern",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "use async function or generator function with express",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/magicdawn/express-modern#readme",
   "files": [
     "index.js",
-		"index.d.ts",
+    "index.d.ts",
     "LICENSE",
     "package.json",
     "README.md"
